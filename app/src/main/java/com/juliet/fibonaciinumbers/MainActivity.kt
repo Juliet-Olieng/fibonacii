@@ -29,25 +29,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun generateFibonacci() {
+        var i=1
         var a = 0
         var b = 1
-        var c: Int
+        val n=100
 
 //        println("Fibonacci numbers up to 200:")
 //        print("$a, $b")
-        var numbers_list= mutableListOf<Int>(a,b)
-        while (true) {
-            c = a + b
-            if (c > 100)
-                break
-
-            numbers_list.add(c)
+        while (i<=n) {
+            print("First $n terms:")
+           val sum =a + b
 
             a = b
-            b = c
+            b = sum
+            i++
+//            binding.rvNumber.layoutManager=LinearLayoutManager(this)
+//            var numbersAdapter=NumberRvAdapter(sum)
+//            binding.rvNumber.adapter=numbersAdapter
         }
-        binding.rvNumber.layoutManager=LinearLayoutManager(this)
-        var numbersAdapter=NumberRvAdapter(numbers_list)
-        binding.rvNumber.adapter=numbersAdapter
+
     }
 }
